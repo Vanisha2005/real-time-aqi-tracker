@@ -18,6 +18,7 @@ A beautiful and interactive dashboard to visualize Air Quality Index (AQI) trend
 4. Ensure `city_day.csv` is in the same folder
 
 ## 📊 Data Source
+Dataset is from Kaggle named "Air Quality Data in India (2015 - 2020)"
 Central Pollution Control Board (CPCB) - `city_day.csv` dataset
 
 ---
