@@ -1,0 +1,100 @@
+/* WOW UI CSS */
+body {
+  background-color: #f4f9ff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  color: #222831;
+}
+
+.stApp {
+  background-color: #f4f9ff;
+  padding: 2rem;
+}
+
+[data-testid="stHeader"] {
+  background: linear-gradient(90deg, #c84e9b, #8f94fb);
+  color: white;
+}
+
+[data-testid="stMarkdownContainer"] p {
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+
+.st-bq {
+  background-color: #ffffff;
+  border-left: 6px solid #4e54c8;
+  padding: 10px;
+  margin: 20px 0;
+}
+
+.stButton>button {
+  background-color: #4e54c8;
+  color: white;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border: none;
+}
+
+.stButton>button:hover {
+  background-color: #3b3f99;
+  color: #fff;
+}
+
+.css-1aumxhk {
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  background-color: white;
+}
+/* Fix dropdown text clipping */
+/* Fix for Streamlit selectbox clipping issue */
+div[data-baseweb="select"] {
+  min-height: 48px !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  border: 1px solid #ccc !important;
+  border-radius: 6px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Improve labels */
+label.css-145kmo2,
+label.css-1cpxqw2 {
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: block;
+  font-size: 16px;
+  color: #333;
+}
+/* Center and space out widgets */
+.css-1kyxreq {
+  padding-top: 0.5rem !important;
+}
+
+/* Optional: tweak dropdown menu options */
+div[role="listbox"] {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+/* Optional: input fields */
+input[type="text"] {
+  padding: 8px;
+  font-size: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+/* Optional: smooth appearance */
+* {
+  font-family: 'Segoe UI', sans-serif;
+}
+
