@@ -13,7 +13,7 @@ with open("style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 # Title
-st.title("🌫️ Real-Time Air Quality Index (AQI) - India")
+st.title("Real-Time Air Quality Index (AQI) - India")
 st.markdown("This dashboard visualizes AQI trends using historical CPCB data from `city_day.csv`.")
 
 # Load data
@@ -37,23 +37,23 @@ selected_city = st.sidebar.selectbox("Choose a City", cities, index=cities.index
 
 city_df = df[df['City'] == selected_city].copy()
 
-start_date, end_date = st.sidebar.date_input("📆 Select Date Range", [city_df['Date'].min(), city_df['Date'].max()])
+start_date, end_date = st.sidebar.date_input("Select Date Range", [city_df['Date'].min(), city_df['Date'].max()])
 filtered_df = city_df[(city_df['Date'] >= pd.to_datetime(start_date)) & (city_df['Date'] <= pd.to_datetime(end_date))]
 
 # AQI Category Function
 def get_aqi_category(aqi):
     if aqi <= 50:
-        return "🟢 Good"
+        return "Good"
     elif aqi <= 100:
-        return "🟡 Moderate"
+        return "Moderate"
     elif aqi <= 200:
-        return "🟠 Unhealthy for Sensitive"
+        return "Unhealthy for Sensitive"
     elif aqi <= 300:
-        return "🔴 Unhealthy"
+        return "Unhealthy"
     elif aqi <= 400:
-        return "🟣 Very Unhealthy"
+        return "Very Unhealthy"
     else:
-        return "⚫ Hazardous"
+        return "Hazardous"
 
 # Latest AQI Display
 latest_date = filtered_df['Date'].max()
