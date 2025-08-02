@@ -1,4 +1,4 @@
-/* WOW UI CSS */
+/* UI CSS */
 body {
   background-color: #f4f9ff;
   font-family: 'Segoe UI', sans-serif;
@@ -53,16 +53,16 @@ h1, h2, h3, h4 {
 /* Fix dropdown text clipping */
 /* Fix for Streamlit selectbox clipping issue */
 div[data-baseweb="select"] {
-  min-height: 48px !important;
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
-  font-size: 16px !important;
-  line-height: 1.5 !important;
-  border: 1px solid #ccc !important;
-  border-radius: 6px !important;
-  box-sizing: border-box !important;
-  display: flex !important;
-  align-items: center !important;
+  min-height: 48px ;
+  padding-top: 10px ;
+  padding-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  border: 1px solid #ccc;
+  border-radius: 6px ;
+  box-sizing: border-box;
+  display: flex ;
+  align-items: center;
 }
 
 /* Improve labels */
@@ -76,16 +76,16 @@ label.css-1cpxqw2 {
 }
 /* Center and space out widgets */
 .css-1kyxreq {
-  padding-top: 0.5rem !important;
+  padding-top: 0.5rem ;
 }
 
-/* Optional: tweak dropdown menu options */
+/*  tweak dropdown menu options */
 div[role="listbox"] {
   font-size: 15px;
   line-height: 1.4;
 }
 
-/* Optional: input fields */
+/* input fields */
 input[type="text"] {
   padding: 8px;
   font-size: 15px;
@@ -93,7 +93,7 @@ input[type="text"] {
   border: 1px solid #ddd;
 }
 
-/* Optional: smooth appearance */
+/* smooth appearance */
 * {
   font-family: 'Segoe UI', sans-serif;
 }
