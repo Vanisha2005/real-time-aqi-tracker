@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from io import BytesIO
 
 # Page config
-st.set_page_config(page_title="🌫️ Real-Time AQI Tracker", layout="wide")
+st.set_page_config(page_title="Real-Time AQI Tracker", layout="wide")
 
 # Inject custom CSS
 with open("style.css") as f:
@@ -33,7 +33,7 @@ if df.empty:
 
 # Sidebar - City and Date range
 cities = sorted(df['City'].unique())
-selected_city = st.sidebar.selectbox("🏙️ Choose a City", cities, index=cities.index("Delhi") if "Delhi" in cities else 0)
+selected_city = st.sidebar.selectbox("Choose a City", cities, index=cities.index("Delhi") if "Delhi" in cities else 0)
 
 city_df = df[df['City'] == selected_city].copy()
 
@@ -70,17 +70,17 @@ else:
 # KPIs
 col1, col2, col3 = st.columns(3)
 avg_aqi = filtered_df['AQI'].mean()
-col1.metric("📊 Average AQI", f"{avg_aqi:.2f}")
-col2.metric("📅 Total Days", len(filtered_df))
-col3.metric("😷 Max AQI", int(filtered_df['AQI'].max()))
+col1.metric("Average AQI", f"{avg_aqi:.2f}")
+col2.metric("Total Days", len(filtered_df))
+col3.metric("Max AQI", int(filtered_df['AQI'].max()))
 
 # Line Chart
-st.subheader(f"📈 AQI Trend Over Time for {selected_city}")
+st.subheader(f"AQI Trend Over Time for {selected_city}")
 fig_line = px.line(filtered_df, x="Date", y="AQI", markers=True, title="Daily AQI Over Time")
 st.plotly_chart(fig_line, use_container_width=True)
 
 # Heatmap
-st.subheader("🌡️ Monthly AQI Heatmap")
+st.subheader("Monthly AQI Heatmap")
 heatmap_data = filtered_df.pivot_table(index=filtered_df["Date"].dt.month,
                                        columns=filtered_df["Date"].dt.day,
                                        values="AQI", aggfunc="mean")
@@ -91,14 +91,14 @@ st.pyplot(fig)
 
 # Download button
 st.download_button(
-    label="⬇️ Download Filtered Data",
+    label="Download Filtered Data",
     data=filtered_df.to_csv(index=False).encode("utf-8"),
     file_name=f"AQI_{selected_city}.csv",
     mime='text/csv'
 )
 
 # Raw Data
-with st.expander("📋 Show Raw Data Table"):
+with st.expander("Show Raw Data Table"):
     st.dataframe(filtered_df.tail(100), use_container_width=True)
 
 # AI-Powered Insight
